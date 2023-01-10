@@ -7,6 +7,9 @@ import Catalog from "./commponent/Catalog/Catalog";
 import Main from "./commponent/Main/Main";
 import Footer from './commponent/Footer/Footer'
 import {Routes, Route} from "react-router-dom";
+import RegistrationContainer from "./commponent/Registration/RegistrationContainer";
+import RegistrationPage from "./commponent/Registration/RegistrationPage";
+import LoginPage from "./commponent/Registration/LoginPage";
 function App() {
   return (
       <div>
@@ -19,7 +22,8 @@ function App() {
               <Route  path={'/'} element={ <Main/>}/>
 
               <Route path={'/catalog'} element={  <Catalog/>} />
-              <Route path={'/reg'} element = {()=>{}} />
+              <Route path={'/registration'} element = {<RegistrationPage/>} />
+              <Route path={'/login'} element = {<LoginPage/>} />
 
 
 

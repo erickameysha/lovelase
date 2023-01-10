@@ -29,7 +29,7 @@ const Header = () => {
                         </div>
                             <div
                             className={s.temp}>
-                                <Link to={'/reg'}>Registration </Link>
+                                <Link to={'/registration'}>Registration </Link>
                             </div>
                         </div>
                    
