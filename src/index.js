@@ -6,10 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 import {store} from "./store";
-import './fireBase'
+import './firebase'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
+//test1
       <BrowserRouter>
           <Provider store={store}>
               <App />
@@ -17,7 +17,6 @@ root.render(
 
       </BrowserRouter>
 
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
