@@ -5,4 +5,17 @@
 }
 .footer{
     background-color: #fdf6fa;
+
+    padding-top: 86px;
+
+}
+.reerr{
+    display: flex;
+    justify-content: space-between;
+}
+.reerr ul{
+    list-style-type:none;
+}
+ .reerr li{
+  padding-bottom: 10px;
 }

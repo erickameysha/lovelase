@@ -1,13 +1,17 @@
-import React, {useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './Catalog.css'
 import CatalogIMG from './CatalogImages/colection.png'
-import CatalogItem from "./CatalogsItem/CatalogItem";
+import {CatalogItem} from "./CatalogsItem/CatalogItem";
 import {catalogData} from "./CatalogFakeData";
+import Item from "../Item/Item";
+import {Link} from "react-router-dom";
 
 
 const Catalog = () => {
     let [catalog, setCatalog] = useState(catalogData)
-    let [isActive, setIsActive] = useState(true)
+    let [catalogItem, setCatalogItem] = useState()
+    let [isActive, setIsActive] = useState(false)
+
     let [filter, setFilter] = useState('All')
 
 
@@ -16,14 +20,20 @@ const Catalog = () => {
 
         return array.filter((el) => el.filter === filter)
     }
+    let hookCatalogItem = (id) => {
+        let hook = catalog.filter(el => el.id === id)
+        return hook
+    }
+
     let dataType = filterProperty(catalog, filter)
+
     return (
         <div className={'container'}>
 
             <div>
-                <div>
+                <Link to={'/item'}>
                     <img className={'catalog-img'} src={CatalogIMG} alt=""/>
-                </div>
+                </Link>
                 <div className="containere">
 
                     <div className={'flex-container'}>
@@ -43,17 +53,23 @@ const Catalog = () => {
 
                     <div className="catalog-items">
                         {
+
                             dataType.map((el) => {
 
-                                return <CatalogItem
+                                return (
+
+                                    <CatalogItem
+                                        img={el.img}
                                     key={el.id}
                                     id={el.id}
                                     title={el.title}
                                     color={el.color}
                                     price={el.price}
                                     filter={el.filter}
+                                    hookCatalogItem={hookCatalogItem}
                                 />
-                            })
+
+                                )   })
                         }
                     </div>
 

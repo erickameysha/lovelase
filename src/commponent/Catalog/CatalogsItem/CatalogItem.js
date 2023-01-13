@@ -1,13 +1,22 @@
 import React from 'react';
 import test from './images/test.png'
-import  './CatalogItem.css'
+import './CatalogItem.css'
+import {Link} from "react-router-dom";
 
-const CatalogItem = (props) => {
+export const CatalogItem = (props) => {
+
+
+     let setId = () => {
+
+       return  setId(props.id)
+    }
     return (
-        <div  className={'item'}>
-            <div >
-                <img className={'catalog-images'} src={test} alt="gglglg"/>
-            </div>
+        <div className={'item'}>
+          <Link to={'/item'}>
+            <div className="catalog-images">
+              <img src={props.img} alt=""/>
+          </div>
+          </Link>
             <div className={'catalog-subtitle'}>
                 <span className={'catalog-subtitle__title'}>{props.title}</span>
                 <span className={'catalog-subtitle__color'}>{props.color}</span>
@@ -16,5 +25,3 @@ const CatalogItem = (props) => {
         </div>
     );
 };
-
-export default CatalogItem;
